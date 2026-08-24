@@ -42,21 +42,31 @@ export default function Home() {
           </Link>
 
           <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-            <a href="#how-it-works" className="transition hover:text-slate-950">
+            <a
+              href="#how-it-works"
+              className="transition hover:text-slate-950"
+            >
               How it works
             </a>
 
-            <a href="#features" className="transition hover:text-slate-950">
+            <a
+              href="#features"
+              className="transition hover:text-slate-950"
+            >
               Features
             </a>
 
-            <a href="#demo" className="transition hover:text-slate-950">
+            <a
+              href="#demo"
+              className="transition hover:text-slate-950"
+            >
               Demo
             </a>
           </nav>
 
+          {/* Login flow */}
           <Link
-            href="/dashboard"
+            href="/login"
             className="rounded-lg bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
           >
             Get Started
@@ -83,7 +93,7 @@ export default function Home() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/dashboard"
+                href="/login"
                 className="rounded-lg bg-slate-950 px-6 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-slate-800"
               >
                 Build a Website
@@ -133,6 +143,7 @@ export default function Home() {
                     <div className="mt-4 h-10 max-w-md rounded bg-slate-950" />
 
                     <div className="mt-3 h-3 max-w-sm rounded bg-slate-200" />
+
                     <div className="mt-2 h-3 max-w-xs rounded bg-slate-200" />
 
                     <div className="mt-6 h-10 w-32 rounded-lg bg-slate-950" />
@@ -198,7 +209,9 @@ export default function Home() {
                   <div className="h-2 w-2 rounded-full bg-slate-950" />
                 </div>
 
-                <h3 className="mt-8 text-xl font-bold">{step.title}</h3>
+                <h3 className="mt-8 text-xl font-bold">
+                  {step.title}
+                </h3>
 
                 <p className="mt-3 text-sm leading-6 text-slate-500">
                   {step.text}
@@ -238,7 +251,9 @@ export default function Home() {
                   ✓
                 </div>
 
-                <p className="mt-5 text-sm font-semibold">{feature}</p>
+                <p className="mt-5 text-sm font-semibold">
+                  {feature}
+                </p>
               </div>
             ))}
           </div>
@@ -318,7 +333,7 @@ export default function Home() {
           </p>
 
           <Link
-            href="/dashboard"
+            href="/login"
             className="mt-8 inline-flex rounded-lg bg-slate-950 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-slate-800"
           >
             Get Started
@@ -331,6 +346,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-8 sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <div>
             <p className="font-bold">GearOnStack</p>
+
             <p className="mt-1 text-xs text-slate-500">
               Build your business website.
             </p>
