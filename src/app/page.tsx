@@ -1,29 +1,14 @@
 import Link from "next/link";
 
-const steps = [
-  {
-    number: "01",
-    title: "Add your business",
-    text: "Tell GearOnStack about your business.",
-  },
-  {
-    number: "02",
-    title: "Choose a style",
-    text: "Pick a website style that fits your business.",
-  },
-  {
-    number: "03",
-    title: "Build & publish",
-    text: "Customize your website and get it ready to share.",
-  },
-];
-
 const features = [
   "Business-focused design",
   "Product & service showcase",
   "Mobile-ready website",
   "Easy customer contact",
 ];
+
+const whatsappUrl =
+  "https://wa.me/6285337338786?text=Halo%20GearOnStack%2C%20saya%20tertarik%20untuk%20membuat%20website%20untuk%20bisnis%20saya.";
 
 export default function Home() {
   return (
@@ -43,13 +28,6 @@ export default function Home() {
 
           <nav className="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
             <a
-              href="#how-it-works"
-              className="transition hover:text-slate-950"
-            >
-              How it works
-            </a>
-
-            <a
               href="#features"
               className="transition hover:text-slate-950"
             >
@@ -62,14 +40,22 @@ export default function Home() {
             >
               Demo
             </a>
+
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-slate-950"
+            >
+              Contact
+            </a>
           </nav>
 
-          {/* Login flow */}
           <Link
             href="/login"
             className="rounded-lg bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-800"
           >
-            Get Started
+            Client Portal
           </Link>
         </div>
       </header>
@@ -92,12 +78,14 @@ export default function Home() {
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/login"
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="rounded-lg bg-slate-950 px-6 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-slate-800"
               >
-                Build a Website
-              </Link>
+                Contact Us
+              </a>
 
               <a
                 href="#demo"
@@ -108,7 +96,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Hero Product Mockup */}
+          {/* Hero Website Mockup */}
           <div className="relative">
             <div className="absolute -inset-6 rounded-[2rem] bg-slate-200/50 blur-2xl" />
 
@@ -157,67 +145,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Simple Statement */}
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-4xl px-6 py-20 text-center lg:py-24">
-          <p className="text-sm font-semibold uppercase tracking-widest text-slate-400">
-            GearOnStack
-          </p>
-
-          <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-            From business information to a real digital presence.
-          </h2>
-
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600">
-            No complicated website setup. Start with your business and build
-            from there.
-          </p>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section
-        id="how-it-works"
-        className="border-b border-slate-200 bg-slate-50"
-      >
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
-          <div className="max-w-xl">
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
-              How it works
-            </p>
-
-            <h2 className="mt-3 text-3xl font-bold tracking-tight">
-              Simple from start to finish.
-            </h2>
-          </div>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {steps.map((step) => (
-              <div
-                key={step.number}
-                className="rounded-2xl border border-slate-200 bg-white p-7"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-bold text-slate-400">
-                    {step.number}
-                  </span>
-
-                  <div className="h-2 w-2 rounded-full bg-slate-950" />
-                </div>
-
-                <h3 className="mt-8 text-xl font-bold">
-                  {step.title}
-                </h3>
-
-                <p className="mt-3 text-sm leading-6 text-slate-500">
-                  {step.text}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -274,15 +201,16 @@ export default function Home() {
               </h2>
 
               <p className="mt-5 max-w-xl leading-7 text-slate-400">
-                Kapluk is our first business case for GearOnStack — showing how
-                a real business can become a professional digital storefront.
+                Kapluk is our first business case for GearOnStack — showing
+                how a real business can become a professional digital
+                storefront.
               </p>
 
               <Link
-                href="/businesses/kapluk-grosir-china"
+                href="/businesses/kapluk-grosir-china/site"
                 className="mt-8 inline-flex rounded-lg bg-white px-6 py-3.5 text-sm font-semibold text-slate-950 transition hover:bg-slate-200"
               >
-                View Kapluk
+                View Website →
               </Link>
             </div>
 
@@ -325,19 +253,22 @@ export default function Home() {
       <section className="border-b border-slate-200 bg-slate-50">
         <div className="mx-auto max-w-4xl px-6 py-20 text-center lg:py-24">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Ready to build your business website?
+            Ready to grow your business online?
           </h2>
 
           <p className="mx-auto mt-4 max-w-xl text-slate-600">
-            Start with your business. GearOnStack takes it from there.
+            Tell us about your business and let&apos;s build something
+            professional together.
           </p>
 
-          <Link
-            href="/login"
+          <a
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-8 inline-flex rounded-lg bg-slate-950 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-slate-800"
           >
-            Get Started
-          </Link>
+            Contact Us
+          </a>
         </div>
       </section>
 
@@ -348,13 +279,31 @@ export default function Home() {
             <p className="font-bold">GearOnStack</p>
 
             <p className="mt-1 text-xs text-slate-500">
-              Build your business website.
+              Professional websites for businesses.
             </p>
           </div>
 
-          <p className="text-xs text-slate-400">
-            © 2026 GearOnStack
-          </p>
+          <div className="flex items-center gap-5">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs font-semibold text-slate-600 transition hover:text-slate-950"
+            >
+              Contact Us
+            </a>
+
+            <Link
+              href="/login"
+              className="text-xs font-semibold text-slate-600 transition hover:text-slate-950"
+            >
+              Client Portal
+            </Link>
+
+            <p className="text-xs text-slate-400">
+              © 2026 GearOnStack
+            </p>
+          </div>
         </div>
       </footer>
     </main>

@@ -157,14 +157,14 @@ export default function BusinessesPage() {
                 </h1>
 
                 <p className="mt-2 text-sm text-slate-500">
-                  Kelola bisnis yang akan dibuatkan website oleh GearOnStack.
+                  Kelola bisnis dan website customer GearOnStack.
                 </p>
               </div>
             </div>
           </header>
 
           <div className="mx-auto max-w-7xl space-y-6 p-6 lg:p-8">
-            {/* Search + Add */}
+            {/* Search */}
             <div className="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-5 md:flex-row md:items-center md:justify-between">
               <div className="flex-1">
                 <input
@@ -176,9 +176,12 @@ export default function BusinessesPage() {
                 />
               </div>
 
-              <button className="rounded-lg bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800">
+              <Link
+                href="/login"
+                className="rounded-lg bg-slate-950 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-slate-800"
+              >
                 + Tambah Bisnis
-              </button>
+              </Link>
             </div>
 
             {/* Count */}
@@ -210,13 +213,15 @@ export default function BusinessesPage() {
                 </div>
 
                 <h2 className="mt-4 font-bold">
-                  {search ? "Business tidak ditemukan" : "Belum ada business"}
+                  {search
+                    ? "Business tidak ditemukan"
+                    : "Belum ada business"}
                 </h2>
 
                 <p className="mx-auto mt-2 max-w-md text-sm text-slate-500">
                   {search
                     ? "Coba gunakan kata pencarian yang berbeda."
-                    : "Tambahkan business pertama untuk mulai membuat website."}
+                    : "Tambahkan business pertama untuk mulai mengelola website."}
                 </p>
               </div>
             ) : (
@@ -227,17 +232,19 @@ export default function BusinessesPage() {
                     className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-slate-300 hover:shadow-sm"
                   >
                     <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                      {/* Business Info */}
                       <div className="flex items-start gap-4">
                         <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-slate-950 text-xl font-bold text-white">
                           {business.name.charAt(0)}
                         </div>
 
-                        <Link
-  href={`/businesses/${business.slug}/site`}
-  className="text-lg font-bold transition hover:underline"
->
-  {business.name}
-</Link>
+                        <div>
+                          <Link
+                            href={`/businesses/${business.slug}/site`}
+                            className="text-lg font-bold transition hover:underline"
+                          >
+                            {business.name}
+                          </Link>
 
                           <p className="mt-1 text-sm text-slate-500">
                             {business.category || "Business"}
@@ -269,28 +276,22 @@ export default function BusinessesPage() {
                         </div>
                       </div>
 
+                      {/* Actions */}
                       <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
-  <Link
-    href={`/businesses/${business.slug}/site`}
-    className="rounded-lg bg-slate-950 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-slate-800"
-  >
-    View Website
-  </Link>
+                        <Link
+                          href={`/businesses/${business.slug}/site`}
+                          className="rounded-lg bg-slate-950 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-slate-800"
+                        >
+                          View Website
+                        </Link>
 
-  <Link
-    href={`/businesses/${business.slug}/site`}
-    className="rounded-lg border border-slate-200 px-4 py-2.5 text-center text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
-  >
-    View Website
-  </Link>
-
-  <Link
-    href={`/businesses/${business.slug}/settings`}
-    className="rounded-lg border border-slate-200 px-4 py-2.5 text-center text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
-  >
-    Edit
-  </Link>
-</div>
+                        <Link
+                          href={`/businesses/${business.slug}/settings`}
+                          className="rounded-lg border border-slate-200 px-4 py-2.5 text-center text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+                        >
+                          Edit
+                        </Link>
+                      </div>
                     </div>
                   </article>
                 ))}
